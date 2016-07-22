@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'bienvenido/index'
   get 'bienvenido/about'
   get 'bienvenido/contacto'
