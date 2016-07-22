@@ -1,29 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @invoice.date %>
-</p>
+<h1>Datos</h1>
 
-<p>
-  <strong>Company:</strong>
-  <%= @invoice.company %>
-</p>
-
-<p>
-  <strong>Tax:</strong>
-  <%= @invoice.tax %>
-</p>
-
-<p>
-  <strong>Salesperson:</strong>
-  <%= @invoice.salesperson %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @invoice.status_type %>
-</p>
-
-<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>
+<ul class="list-group">
+  <li class="list-group-item">
+    <strong>Fecha:</strong>
+     <%= @invoice.date.strftime("%m/%d/%Y") %>
+  </li>
+  <li class="list-group-item">
+    <strong>Compañia:</strong>
+    <%= @invoice.company %>
+  </li>
+  <li class="list-group-item">
+    <strong>Impuestos:</strong>
+    <%= @invoice.tax %>
+  </li>
+  <li class="list-group-item">
+    <strong>Vendedor:</strong>
+    <%= @invoice.salesperson %>
+  </li>
+  <li class="list-group-item">
+    <strong>Estado:</strong>
+    <%= @invoice.status_type %>
+  </li>
+</ul>
+<%= link_to 'Editar', edit_invoice_path(@invoice),class: 'btn btn-mini btn-success' %>
+<%= link_to 'Volver', invoices_path, class: 'btn btn-mini btn-default' %>
